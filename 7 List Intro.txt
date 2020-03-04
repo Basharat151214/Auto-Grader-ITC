@@ -1,0 +1,124 @@
+## IMPORTS GO HERE
+
+## END OF IMPORTS
+
+
+### YOUR CODE FOR calculate_sgpa() FUNCTION GOES HERE ###
+def calculate_sgpa(basharat):
+    num = 0
+    subject = 0
+    sgpa= 0
+    check = 0
+    if not basharat:
+        return 0
+    if type(basharat)!=list:
+        basharat=[basharat]
+    for i in basharat:
+        check+=1
+        if (i==None):
+            print ("none")
+            return None
+        elif (i=='A+'or i == 'A'):
+            num+=4.00
+            subject+=1
+        elif (i== 'A-'):
+            num+=3.67
+            subject+=1
+        elif (i=='B+'):
+            num+=3.33
+            subject+=1
+        elif (i=='B'):
+            num+=3.00
+            subject+=1
+        elif (i=='B-'):
+            num+=2.67
+            subject+=1
+        elif (i=='C+'):
+            num+=2.33
+            subject+=1
+        elif (i=='C'):
+            num+=2.00
+            subject+=1
+        elif (i=='C-'):
+            num+=1.67
+            subject+=1
+        elif (i=='D+'):
+            num+=1.33
+            subject+=1
+        elif (i=='D'):
+            num+=1.00
+            subject+=1
+        elif (i=='F'):
+            num+=0.00
+            subject+=1
+        else:
+            print("none")
+            return None
+    if check>0:
+        sgpa=num/subject
+        return sgpa
+#### End OF MARKER
+
+### YOUR CODE FOR calculate_sgpa_weighted() FUNCTION GOES HERE ###
+def calculate_sgpa_weighted(a,b):
+    marks=0
+    inc=0
+    ch=0
+    if not a:
+        return None
+    if not b:
+        return None
+    if type(a)!=list:
+        a=[a]
+    if type(b)!=list:
+        b=[b]
+    if(len(a)!=len(b)):
+        print("not equal ")
+        return None
+    for i in a:
+        if(i==None):
+            return None
+        elif(i=='A+' or i== 'A'):
+            marks=marks+4.00*b[inc]
+            ch=ch+b[inc]
+        elif i=='A-':
+            marks=marks+3.67*b[inc]
+            ch=ch+b[inc]
+        elif i=='B+':
+            ch=ch+b[inc]
+            marks=marks+3.33*b[inc]
+        elif i=='B':
+            ch=ch+b[inc]
+            marks=marks+3.00*b[inc]
+        elif i=='B-':
+            ch=ch+b[inc]
+            marks=marks+2.67*b[inc]
+        elif i=='C+':
+            ch=ch+b[inc]
+            marks=marks+2.33*b[inc]
+        elif i=='C':
+            ch=ch+b[inc]
+            marks=marks+2.00*b[inc]
+        elif i== 'C-':
+            ch=ch+b[inc]
+            marks=marks+1.67*b[inc]
+        elif i== 'D+':
+            ch=ch+b[inc]
+            marks=marks+1.33*b[inc]
+        elif i== 'D':
+            ch=ch+b[inc]
+            marks=marks+1.00*b[inc]
+        elif i== 'F':
+            ch=ch+b[inc]
+            marks+=0.0*b[inc]
+        else:
+            return None
+        inc+=1
+    if inc>0:
+        return marks/ch
+#### End OF MARKER
+if __name__ == '__main__':
+    print calculate_sgpa(['A+'])
+    print calculate_sgpa_weighted(['A+'], [4])
+CLOSE
+

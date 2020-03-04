@@ -1,0 +1,48 @@
+## IMPORTS GO HERE
+
+## END OF IMPORTS
+
+
+
+### YOUR CODE FOR line_count() FUNCTION GOES HERE ###
+def line_count(x,y):
+	with open(y,'r') as t:
+		count = 1
+		for i in t:
+			count += 1
+	return count
+	
+
+#### End OF MARKER
+
+
+
+### YOUR CODE FOR character_count() FUNCTION GOES HERE ###
+def character_count(x,y):
+	with open(y,'r') as t:
+		sum = 0
+		v = t.read()
+	for i in v:
+		sum = sum + 1
+	return sum
+#### End OF MARKER
+
+
+
+### YOUR CODE FOR move_lines() FUNCTION GOES HERE ###
+
+#### End OF MARKER
+
+
+
+if __name__ == '__main__':
+    print line_count('.', 'essay.txt')
+    print line_count('.', 'essay.txt', True)
+
+    print character_count('.', 'essay.txt')
+    print character_count('.', 'essay.txt', True)
+
+    move_lines('essay.txt', 'out.txt', 3)
+
+    pass
+

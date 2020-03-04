@@ -1,0 +1,33 @@
+## IMPORTS GO HERE
+
+## END OF IMPORTS
+
+### YOUR CODE FOR output_prime_factors() FUNCTION GOES HERE ###
+def output_prime_factors(a):
+	a=round(a)
+	check=0
+	while check < a:
+		check +=1
+		if a%check==0 and function_call(check)==True:
+			print check
+			
+def function_call(check):
+				if check<2:
+					return False
+				else:
+					for b in range(2,check):
+						if check%b==0:
+							return False
+				return True			
+#### End OF MARKER
+
+
+### YOUR CODE FOR get_nth_prime() FUNCTION GOES HERE ###
+
+#### End OF MARKER
+
+
+if __name__ == '__main__':
+    output_prime_factors(23)
+    print get_nth_prime(4)
+

@@ -1,0 +1,52 @@
+## IMPORTS GO HERE
+
+## END OF IMPORTS
+
+#### YOUR CODE FOR is_prime() FUNCTION GOES HERE ####
+def is_prime(v):
+	if v == 1:
+		return False
+	elif v == 2:
+		return True
+	elif type(v) == float:
+		if v % 1 == 0:
+			v = int(v)
+		else:
+			return False
+	for x in range(2,v):
+		if (v % x) == 0:
+			return False
+	return True
+
+#### End OF MARKER
+
+#### YOUR CODE FOR output_factors() FUNCTION GOES HERE ####
+
+def output_factors(i):
+	for v in range(1,i+1):
+		if i % v == 0:
+			print v
+
+
+#### End OF MARKER
+
+#### YOUR CODE FOR get_largest_prime() FUNCTION GOES HERE ####
+
+def get_largest_prime(v):
+	for p in range(2,v+1):
+		if is_prime(p):
+			largest_prime = p
+	return largest_prime
+			
+#### End OF MARKER
+
+
+
+if __name__ == '__main__':
+    print is_prime(499)  # should return True
+
+    print get_largest_prime(10)  # should return 7
+    # print get_largest_prime(100000)  # bonus, try with 100k
+
+    output_factors(10)  # should output -- 1 2 5 10 -- one on each line
+
